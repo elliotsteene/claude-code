@@ -46,10 +46,14 @@ Then wait for the user's research query.
 
    **For codebase research:**
    - Use the **codebase-locator** agent to find WHERE files and components live
-   - Use the **codebase-analyzer** agent to understand HOW specific code works (without critiquing it)
+   - Use the **codebase-analyser** agent to understand HOW specific code works (without critiquing it)
    - Use the **codebase-pattern-finder** agent to find examples of existing patterns (without evaluating them)
 
    **IMPORTANT**: All agents are documentarians, not critics. They will describe what exists without suggesting improvements or identifying issues.
+   
+  **For thoughts directory:**
+  - Use the **thoughts-locator** agent to discover what documents exist about the topic
+  - Use the **thoughts-analyser** agent to extract key insights from specific documents (only the most relevant ones)
 
    The key is to use these agents intelligently:
    - Start with locator agents to find what exists
@@ -164,6 +168,7 @@ Then wait for the user's research query.
 - Always use parallel Task agents to maximize efficiency and minimize context usage
 - Always run fresh codebase research - never rely solely on existing research documents
 - The thoughts/ directory provides historical context to supplement live findings
+- The thoughts/ directory provides historical context to supplement live findings
 - Focus on finding concrete file paths and line numbers for developer reference
 - Research documents should be self-contained with all necessary context
 - Each sub-agent prompt should be specific and focused on read-only documentation operations
@@ -185,10 +190,10 @@ Then wait for the user's research query.
 - **Path handling**: The thoughts/searchable/ directory contains hard links for searching
   - Always document paths by removing ONLY "searchable/" - preserve all other subdirectories
   - Examples of correct transformations:
-    - `thoughts/searchable/allison/old_stuff/notes.md` → `thoughts/allison/old_stuff/notes.md`
+    - `thoughts/searchable/elliot/old_stuff/notes.md` → `thoughts/elliot/old_stuff/notes.md`
     - `thoughts/searchable/shared/prs/123.md` → `thoughts/shared/prs/123.md`
     - `thoughts/searchable/global/shared/templates.md` → `thoughts/global/shared/templates.md`
-  - NEVER change allison/ to shared/ or vice versa - preserve the exact directory structure
+  - NEVER change elliot/ to shared/ or vice versa - preserve the exact directory structure
   - This ensures paths are correct for editing and navigation
 - **Frontmatter consistency**:
   - Always include frontmatter at the beginning of research documents

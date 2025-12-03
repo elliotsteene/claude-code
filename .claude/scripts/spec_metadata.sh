@@ -19,6 +19,13 @@ else
   USER=""
 fi
 
+# Optional: thoughts system status (may be long). Limit lines to avoid noise.
+THOUGHTS_STATUS=""
+if command -v humanlayer >/dev/null 2>&1; then
+  # Capture first 40 lines; adjust as needed.
+  THOUGHTS_STATUS=$(humanlayer thoughts status 2>/dev/null | head -n 40)
+fi
+
 # Print similar to the individual command outputs
 echo "Current Date/Time (TZ): $DATETIME_TZ"
 [ -n "$GIT_COMMIT" ] && echo "Current Git Commit Hash: $GIT_COMMIT"
@@ -26,3 +33,6 @@ echo "Current Date/Time (TZ): $DATETIME_TZ"
 [ -n "$USER" ] && echo "Current User: $USER"
 [ -n "$REPO_NAME" ] && echo "Repository Name: $REPO_NAME"
 echo "Timestamp For Filename: $FILENAME_TS"
+[ -n "$THOUGHTS_STATUS" ] && {
+  echo "$THOUGHTS_STATUS"
+}
