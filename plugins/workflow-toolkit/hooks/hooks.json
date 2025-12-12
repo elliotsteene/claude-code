@@ -1,12 +1,17 @@
 {
-  "hooks": [
-    {
-      "name": "setup-validation",
-      "description": "Validates required dependencies on first use",
-      "event": "SessionStart",
-      "type": "prompt",
-      "enabled": true,
-      "prompt": "Before proceeding, check if the workflow-toolkit plugin dependencies are installed. This plugin requires:\n\n- **git-town**: Stack management for pull requests\n- **gh**: GitHub CLI for PR creation\n- **humanlayer**: Thoughts directory synchronization\n- **just**: Task runner (optional but recommended)\n\nRun this validation command to check dependencies:\n\n```bash\ncommand -v git-town >/dev/null 2>&1 && echo \"✓ git-town installed\" || echo \"✗ git-town missing\"\ncommand -v gh >/dev/null 2>&1 && echo \"✓ gh installed\" || echo \"✗ gh missing\"\ncommand -v humanlayer >/dev/null 2>&1 && echo \"✓ humanlayer installed\" || echo \"✗ humanlayer missing\"\ncommand -v just >/dev/null 2>&1 && echo \"✓ just installed\" || echo \"✗ just installed (optional)\" || echo \"✗ just missing (optional)\"\n```\n\nIf any required dependencies are missing, inform the user with installation instructions:\n\n**git-town**: https://www.git-town.com/install\n```bash\nbrew install git-town  # macOS\n```\n\n**gh (GitHub CLI)**: https://cli.github.com/manual/installation\n```bash\nbrew install gh  # macOS\n```\n\n**humanlayer**: https://docs.humanlayer.dev/installation\n```bash\npip install humanlayer\n```\n\n**just**: https://just.systems/man/en/chapter_4.html\n```bash\nbrew install just  # macOS\n```\n\nOnly run this validation ONCE per session. After the first check, do not repeat unless the user explicitly asks."
-    }
-  ]
+  "description": "Validates required dependencies for workflow-toolkit plugin",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Before proceeding, check if the workflow-toolkit plugin dependencies are installed. This plugin requires:\n\n- **git-town**: Stack management for pull requests\n- **gh**: GitHub CLI for PR creation\n- **humanlayer**: Thoughts directory synchronization\n- **just**: Task runner (optional but recommended)\n\nRun this validation command to check dependencies:\n\n```bash\ncommand -v git-town >/dev/null 2>&1 && echo \"✓ git-town installed\" || echo \"✗ git-town missing\"\ncommand -v gh >/dev/null 2>&1 && echo \"✓ gh installed\" || echo \"✗ gh missing\"\ncommand -v humanlayer >/dev/null 2>&1 && echo \"✓ humanlayer installed\" || echo \"✗ humanlayer missing\"\ncommand -v just >/dev/null 2>&1 && echo \"✓ just installed\" || echo \"✗ just installed (optional)\" || echo \"✗ just missing (optional)\"\n```\n\nIf any required dependencies are missing, inform the user with installation instructions:\n\n**git-town**: https://www.git-town.com/install\n```bash\nbrew install git-town  # macOS\n```\n\n**gh (GitHub CLI)**: https://cli.github.com/manual/installation\n```bash\nbrew install gh  # macOS\n```\n\n**humanlayer**: https://docs.humanlayer.dev/installation\n```bash\npip install humanlayer\n```\n\n**just**: https://just.systems/man/en/chapter_4.html\n```bash\nbrew install just  # macOS\n```\n\nOnly run this validation ONCE per session. After the first check, do not repeat unless the user explicitly asks.",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
 }
