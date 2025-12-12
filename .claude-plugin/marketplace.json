@@ -9,7 +9,7 @@
       "name": "workflow-toolkit",
       "version": "0.1.0",
       "description": "Comprehensive development workflow system for codebase research, implementation planning, and stacked PR management through specialized AI agents",
-      "path": "plugins/workflow-toolkit",
+      "path": "./plugins/workflow-toolkit",
       "author": {
         "name": "Elliot Steene",
         "email": "e.steene@hotmail.co.uk"
