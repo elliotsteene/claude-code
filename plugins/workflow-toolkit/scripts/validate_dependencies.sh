@@ -21,7 +21,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/run_silent.sh"
 
 # Required dependencies
-REQUIRED_DEPS=("git-town" "gh" "humanlayer" "elliot")
+REQUIRED_DEPS=("git-town" "gh" "humanlayer")
 OPTIONAL_DEPS=("just")
 
 MISSING=()
