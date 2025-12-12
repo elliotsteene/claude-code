@@ -1,0 +1,16 @@
+# Claude Code local settings
+.claude/*.local.md
+
+# Thoughts directory (user-specific)
+thoughts/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

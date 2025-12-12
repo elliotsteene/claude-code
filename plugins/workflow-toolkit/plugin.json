@@ -1,0 +1,19 @@
+{
+  "name": "workflow-toolkit",
+  "version": "0.1.0",
+  "description": "Comprehensive development workflow system for codebase research, implementation planning, and stacked PR management through specialized AI agents",
+  "author": {
+    "name": "Elliot Steene",
+    "email": "e.steene@hotmail.co.uk"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/elliotsteene/claude-code",
+  "keywords": [
+    "workflow",
+    "research",
+    "planning",
+    "stacked-pr",
+    "agents",
+    "documentation"
+  ]
+}
