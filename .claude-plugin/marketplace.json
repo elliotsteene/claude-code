@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "workflow-toolkit",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "description": "Comprehensive development workflow system for codebase research, implementation planning, and stacked PR management through specialized AI agents",
       "source": "./plugins/workflow-toolkit",
       "author": {
